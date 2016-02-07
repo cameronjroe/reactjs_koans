@@ -1,3 +1,5 @@
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
 import GroceryListPart1 from '../src/05-Challenge-GroceryList-part-1.js';
 import GroceryListPart2 from '../src/05-Challenge-GroceryList-part-2.js';
 import GroceryListPart3 from '../src/05-Challenge-GroceryList-part-3.js';
@@ -11,11 +13,11 @@ describe("05 - Challenge - Grocery List", () => {
     beforeEach( () => {
       var elem = document.createElement('div');
       elem = document.body.appendChild(elem);
-      component = React.render(React.createElement(GroceryListPart1), elem);
+      component = ReactDOM.render(React.createElement(GroceryListPart1), elem);
     });
 
     it('There should be an unordered list of groceries', () => {
-      let groceryListItems = React.addons.TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
+      let groceryListItems = TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
       assert.equal(groceryListItems.length, 1, "There should be exactly one element on the groceries list");
 
       let groceryItem = _.first(groceryListItems);
@@ -28,27 +30,27 @@ describe("05 - Challenge - Grocery List", () => {
     beforeEach( () => {
       var elem = document.createElement('div');
       elem = document.body.appendChild(elem);
-      component = React.render(React.createElement(GroceryListPart2), elem);
+      component = ReactDOM.render(React.createElement(GroceryListPart2), elem);
     });
 
     it('Should render required tags like additional button and input', () => {
-      try { React.addons.TestUtils.findRenderedDOMComponentWithClass(component, "new-item");}
+      try { TestUtils.findRenderedDOMComponentWithClass(component, "new-item");}
       catch(err){
         throw new Error("I can't find new item input");
       }
-      try { React.addons.TestUtils.findRenderedDOMComponentWithClass(component, "add-product");}
+      try { TestUtils.findRenderedDOMComponentWithClass(component, "add-product");}
       catch(err){
         throw new Error("I can't find 'Add new Product' button");
       }
     });
 
     it('Should be possible to add a new product to list', () => {
-      let newProductInput = React.addons.TestUtils.findRenderedDOMComponentWithClass(component, "new-item");
-      let newProductAddButton = React.addons.TestUtils.findRenderedDOMComponentWithClass(component, "add-product");
-      React.addons.TestUtils.Simulate.change(newProductInput.getDOMNode(), { target: {value: 'Oranges' }});
-      React.addons.TestUtils.Simulate.click(newProductAddButton.getDOMNode());
+      let newProductInput = TestUtils.findRenderedDOMComponentWithClass(component, "new-item");
+      let newProductAddButton = TestUtils.findRenderedDOMComponentWithClass(component, "add-product");
+      TestUtils.Simulate.change(newProductInput.getDOMNode(), { target: {value: 'Oranges' }});
+      TestUtils.Simulate.click(newProductAddButton.getDOMNode());
 
-      let groceryListItems = React.addons.TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
+      let groceryListItems = TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
       assert.equal(groceryListItems.length, 2, "There should be exactly two elements on the groceries list");
 
       let groceryItem = _.last(groceryListItems);
@@ -56,9 +58,9 @@ describe("05 - Challenge - Grocery List", () => {
     });
 
     it('Should not be possible to add empty element', () => {
-      let newProductAddButton = React.addons.TestUtils.findRenderedDOMComponentWithClass(component, "add-product");
-      React.addons.TestUtils.Simulate.click(newProductAddButton.getDOMNode());
-      let groceryListItems = React.addons.TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
+      let newProductAddButton = TestUtils.findRenderedDOMComponentWithClass(component, "add-product");
+      TestUtils.Simulate.click(newProductAddButton.getDOMNode());
+      let groceryListItems = TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
 
       assert.equal(groceryListItems.length, 1, "There should be exactly one element on the groceries list");
     });
@@ -69,20 +71,20 @@ describe("05 - Challenge - Grocery List", () => {
     beforeEach( () => {
       var elem = document.createElement('div');
       elem = document.body.appendChild(elem);
-      component = React.render(React.createElement(GroceryListPart3), elem);
+      component = ReactDOM.render(React.createElement(GroceryListPart3), elem);
     });
 
     it('Should render required tags', () => {
-      try { React.addons.TestUtils.findRenderedDOMComponentWithClass(component, "clear-list");}
+      try { TestUtils.findRenderedDOMComponentWithClass(component, "clear-list");}
       catch(err){
         throw new Error("I can't find 'Clear the List' button");
       }
     });
 
     it('Should be possible to remove all list items', () => {
-      let clearListButton = React.addons.TestUtils.findRenderedDOMComponentWithClass(component, "clear-list");
-      React.addons.TestUtils.Simulate.click(clearListButton.getDOMNode());
-      let groceryListItems = React.addons.TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
+      let clearListButton = TestUtils.findRenderedDOMComponentWithClass(component, "clear-list");
+      TestUtils.Simulate.click(clearListButton.getDOMNode());
+      let groceryListItems = TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
 
       assert.equal(groceryListItems.length, 0, "There should be exactly zero elements on the groceries list");
     });
@@ -93,15 +95,15 @@ describe("05 - Challenge - Grocery List", () => {
     beforeEach( () => {
       var elem = document.createElement('div');
       elem = document.body.appendChild(elem);
-      component = React.render(React.createElement(GroceryListPart4), elem);
+      component = ReactDOM.render(React.createElement(GroceryListPart4), elem);
     });
 
     it('Should be possible to make the grocery item complete', () => {
-      let groceryListItems = React.addons.TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
+      let groceryListItems = TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
       let groceryItem = _.last(groceryListItems);
-      React.addons.TestUtils.Simulate.click(groceryItem.getDOMNode());
+      TestUtils.Simulate.click(groceryItem.getDOMNode());
 
-      groceryListItems = React.addons.TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
+      groceryListItems = TestUtils.scryRenderedDOMComponentsWithTag(component, "li");
       assert.equal(groceryListItems.length, 1, "There should be exactly one element on the groceries list");
 
       groceryItem = _.last(groceryListItems);

@@ -1,5 +1,6 @@
 import LifecycleMethodsComponent from '../src/07-LifecycleMethods.js';
 import sinon from 'sinon';
+import ReactDOM from 'react-dom';
 
 describe("07 - Lifecycle methods", () => {
   var component;
@@ -10,7 +11,7 @@ describe("07 - Lifecycle methods", () => {
       mock.expects("log").once().withArgs("I'm mounted!");
 
       var rootNode = document.body.appendChild(document.createElement('div'));
-      React.render(React.createElement(LifecycleMethodsComponent), rootNode);
+      ReactDOM.render(React.createElement(LifecycleMethodsComponent), rootNode);
       mock.verify();
     });
   });
@@ -18,7 +19,7 @@ describe("07 - Lifecycle methods", () => {
   describe("Task #2 - emit a console log when the component updates", () => {
     it("should emit 'Updated!' in developer's console", () => {
       var rootNode = document.body.appendChild(document.createElement('div'));
-      var component = React.render(React.createElement(LifecycleMethodsComponent), rootNode);
+      var component = ReactDOM.render(React.createElement(LifecycleMethodsComponent), rootNode);
 
       var mock = sinon.mock(console);
       mock.expects("log").exactly(2).withArgs("Updated!");
@@ -33,11 +34,11 @@ describe("07 - Lifecycle methods", () => {
   describe("Task #3 - emit a console log when the component unmounts", () => {
     it("should emit 'Goodbye, cruel world! :(' in developer's console", () => {
       var rootNode = document.body.appendChild(document.createElement('div'));
-      var component = React.render(React.createElement(LifecycleMethodsComponent), rootNode);
+      var component = ReactDOM.render(React.createElement(LifecycleMethodsComponent), rootNode);
 
       var mock = sinon.mock(console);
       mock.expects("log").once().withArgs("Goodbye, cruel world! :(");
-      React.unmountComponentAtNode(rootNode);
+      ReactDOM.unmountComponentAtNode(rootNode);
       mock.verify();
     });
   });
