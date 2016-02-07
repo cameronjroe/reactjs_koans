@@ -1,5 +1,18 @@
 # React.js Koans
 
+## Completed
+
+- [x] 01-HelloWorld.jsx
+- [x] 02-PartiesList.jsx
+- [x] 03-WhatsYourName.jsx
+- [ ] 04-Quiz.jsx
+- [ ] 05-Challenge-GroceryList-part-1.jsx
+- [ ] 05-Challenge-GroceryList-part-2.jsx
+- [ ] 05-Challenge-GroceryList-part-3.jsx
+- [ ] 05-Challenge-GroceryList-part-4.jsx
+- [ ] 06-RenderComponent.jsx
+- [ ] 07-LifecycleMethods.js.jsx
+
 If you want to learn React.js you came to the right place. We prepared a set of practical exercises that will help you learn React.js from square one. The only thing you need to know is JavaScript. Here we are using [ECMAScript 2015 standard](https://babeljs.io/docs/learn-es2015/).
 
 The Koans are a set of tasks to complete. Prepared tests checks if they are done correctly.
