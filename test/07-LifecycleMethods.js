@@ -2,7 +2,7 @@ import LifecycleMethodsComponent from '../src/07-LifecycleMethods.js';
 import sinon from 'sinon';
 import ReactDOM from 'react-dom';
 
-describe("07 - Lifecycle methods", () => {
+xdescribe("07 - Lifecycle methods", () => {
   var component;
 
   describe("Task #1 - emit a console log when the component mounts", () => {

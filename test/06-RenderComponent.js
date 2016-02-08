@@ -1,6 +1,6 @@
 import renderNameComponent from '../src/06-RenderComponent.js';
 
-describe("06 - RenderComponent", () => {
+xdescribe("06 - RenderComponent", () => {
 
   beforeEach( () => {
     renderNameComponent(document.body);

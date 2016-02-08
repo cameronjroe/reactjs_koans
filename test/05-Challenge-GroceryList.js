@@ -5,7 +5,7 @@ import GroceryListPart2 from '../src/05-Challenge-GroceryList-part-2.js';
 import GroceryListPart3 from '../src/05-Challenge-GroceryList-part-3.js';
 import GroceryListPart4 from '../src/05-Challenge-GroceryList-part-4.js';
 
-describe("05 - Challenge - Grocery List", () => {
+xdescribe("05 - Challenge - Grocery List", () => {
   var component;
 
   describe("Task #1 - display a list of groceries", () => {
