@@ -5,7 +5,7 @@
 - [x] 01-HelloWorld.jsx
 - [x] 02-PartiesList.jsx
 - [x] 03-WhatsYourName.jsx
-- [ ] 04-Quiz.jsx
+- [x] 04-Quiz.jsx
 - [ ] 05-Challenge-GroceryList-part-1.jsx
 - [ ] 05-Challenge-GroceryList-part-2.jsx
 - [ ] 05-Challenge-GroceryList-part-3.jsx
