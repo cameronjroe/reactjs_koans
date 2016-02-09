@@ -9,7 +9,7 @@
     "start": "npm run compile && nodemon server.js",
     "test": "npm run compile && mocha -b --compilers js:babel-core/register -r ./test/helpers.js test/**/*.js || true",
     "commit": "git-cz",
-    "watch": "onchange exercises/*.jsx -- npm run test-es6"
+    "watch": "onchange exercises/*.jsx -- npm run test"
   },
   "config": {
     "commitizen": {

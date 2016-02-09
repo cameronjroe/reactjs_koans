@@ -6,8 +6,8 @@
 - [x] 02-PartiesList.jsx
 - [x] 03-WhatsYourName.jsx
 - [x] 04-Quiz.jsx
-- [ ] 05-Challenge-GroceryList-part-1.jsx
-- [ ] 05-Challenge-GroceryList-part-2.jsx
+- [x] 05-Challenge-GroceryList-part-1.jsx
+- [x] 05-Challenge-GroceryList-part-2.jsx
 - [ ] 05-Challenge-GroceryList-part-3.jsx
 - [ ] 05-Challenge-GroceryList-part-4.jsx
 - [ ] 06-RenderComponent.jsx
