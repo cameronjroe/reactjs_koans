@@ -82,7 +82,6 @@ describe("05 - Challenge - Grocery List", () => {
     it('is possible to remove all list items', () => {
 
       let clearListButton = component.find(".clear-list");
-      console.log(clearListButton);
       clearListButton.simulate('click');
       let groceryListItems = component.find("li");
 
