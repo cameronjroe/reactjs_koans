@@ -2,11 +2,10 @@ import WhatsYourName from '../src/03-WhatsYourName.js';
 import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
 import {
-  describeWithDOM,
   mount,
 } from 'enzyme';
 
-describeWithDOM("03 - What's Your Name?", () => {
+describe("03 - What's Your Name?", () => {
   var component;
   var paragraphs;
   var inputs;

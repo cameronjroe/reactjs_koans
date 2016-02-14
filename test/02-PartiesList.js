@@ -2,12 +2,11 @@ import PartiesList from '../src/02-PartiesList.js';
 import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
 import {
-  describeWithDOM,
   mount,
 } from 'enzyme';
 
 
-describeWithDOM("02 - Parties List", () => {
+describe("02 - Parties List", () => {
   var component;
 
   beforeEach( () => {

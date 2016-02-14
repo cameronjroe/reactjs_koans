@@ -1,12 +1,9 @@
 import HelloWorld from '../src/01-HelloWorld.js';
 import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
-import {
-  describeWithDOM,
-  mount,
-} from 'enzyme';
+import {mount} from 'enzyme';
 
-describeWithDOM("01 - HelloWorld", () => {
+describe("01 - HelloWorld", () => {
   var component;
 
   beforeEach( () => {

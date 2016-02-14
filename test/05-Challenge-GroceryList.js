@@ -5,12 +5,9 @@ import GroceryListPart1 from '../src/05-Challenge-GroceryList-part-1.js';
 import GroceryListPart2 from '../src/05-Challenge-GroceryList-part-2.js';
 import GroceryListPart3 from '../src/05-Challenge-GroceryList-part-3.js';
 import GroceryListPart4 from '../src/05-Challenge-GroceryList-part-4.js';
-import {
-  describeWithDOM,
-  mount,
-} from 'enzyme';
+import {mount} from 'enzyme';
 
-describeWithDOM("05 - Challenge - Grocery List", () => {
+describe("05 - Challenge - Grocery List", () => {
   var component;
 
   describe("Task #1 - display a list of groceries", () => {
@@ -83,7 +80,9 @@ describeWithDOM("05 - Challenge - Grocery List", () => {
     });
 
     it('is possible to remove all list items', () => {
+
       let clearListButton = component.find(".clear-list");
+      console.log(clearListButton);
       clearListButton.simulate('click');
       let groceryListItems = component.find("li");
 
